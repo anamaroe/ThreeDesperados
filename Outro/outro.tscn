@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cg5xa8vnrrlh1"]
+
+[ext_resource type="Texture2D" uid="uid://b2ff0ch1603kp" path="res://assets/background0.png" id="1_kxlwa"]
+[ext_resource type="Texture2D" uid="uid://dcac8lcr4xnv7" path="res://characters/dark brown left.png" id="2_q4ucg"]
+[ext_resource type="Texture2D" uid="uid://ck65n0yqc4dd6" path="res://characters/black left.png" id="3_jlto1"]
+[ext_resource type="Texture2D" uid="uid://xbbyn6lf3yqo" path="res://characters/light brown left.png" id="4_82v3j"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="5_gb02n"]
+[ext_resource type="Script" uid="uid://bnb6pknt0b10x" path="res://Outro/blinker.gd" id="6_dmdrm"]
+
+[node name="Outro" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kxlwa")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="DarkBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(-476, 297)
+scale = Vector2(1.68239, 1.68243)
+texture = ExtResource("2_q4ucg")
+
+[node name="BlackLeft" type="Sprite2D" parent="."]
+position = Vector2(-58, 303)
+scale = Vector2(1.73171, 1.7381)
+texture = ExtResource("3_jlto1")
+
+[node name="LightBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(-275, 341)
+scale = Vector2(1.72642, 1.65541)
+texture = ExtResource("4_82v3j")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -565.0
+offset_top = -95.0
+offset_right = -165.0
+offset_bottom = -19.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("5_gb02n")
+theme_override_font_sizes/font_size = 50
+text = "You won!"
+script = ExtResource("6_dmdrm")

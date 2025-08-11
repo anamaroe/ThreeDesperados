@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx8ioc4lgkqr6"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3oslpfs7xe" path="res://assets/black.jpg" id="1_ntlem"]
+[ext_resource type="Script" uid="uid://dftxducuks0io" path="res://Level3Intro/timer.gd" id="2_dmwjy"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="3_pakru"]
+
+[node name="Level3Intro" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ntlem")
+script = ExtResource("2_dmwjy")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -140.0
+offset_top = -19.0
+offset_right = 140.0
+offset_bottom = 21.0
+theme_override_fonts/font = ExtResource("3_pakru")
+theme_override_font_sizes/font_size = 40
+text = "Level 3"
+
+[node name="Camera2D" type="Camera2D" parent="."]

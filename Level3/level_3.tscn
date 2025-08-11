@@ -1,0 +1,290 @@
+[gd_scene load_steps=26 format=3 uid="uid://bgd3wuggox4dg"]
+
+[ext_resource type="Script" uid="uid://c7gatrxupmlbw" path="res://Level3/main.gd" id="1_3kk5m"]
+[ext_resource type="Texture2D" uid="uid://qotujgs0hhvd" path="res://assets/level 2 scene real.png" id="1_07wv6"]
+[ext_resource type="Texture2D" uid="uid://bq6f5meqe66wd" path="res://assets/polica.png" id="2_0sspt"]
+[ext_resource type="Texture2D" uid="uid://cmax440qylovk" path="res://assets/wanted1.png" id="4_7ewjb"]
+[ext_resource type="Texture2D" uid="uid://csbtcemj8vbtq" path="res://assets/wanted2.png" id="5_1418g"]
+[ext_resource type="Texture2D" uid="uid://ck65n0yqc4dd6" path="res://characters/black left.png" id="6_043q5"]
+[ext_resource type="Script" uid="uid://bl6q1e2p3etbd" path="res://Level3/poster.gd" id="6_elxjv"]
+[ext_resource type="Texture2D" uid="uid://dcac8lcr4xnv7" path="res://characters/dark brown left.png" id="7_2gsj4"]
+[ext_resource type="Texture2D" uid="uid://xbbyn6lf3yqo" path="res://characters/light brown left.png" id="8_ayjpk"]
+[ext_resource type="Texture2D" uid="uid://b61dybyndgn7c" path="res://assets/cup.png" id="9_043q5"]
+[ext_resource type="Texture2D" uid="uid://bishdr8r5kdxr" path="res://characters/sheriff sleepy.png" id="9_xoc77"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="10_2gsj4"]
+[ext_resource type="Texture2D" uid="uid://bo5hymu1pqj78" path="res://assets/safe.png" id="11_ayjpk"]
+[ext_resource type="Texture2D" uid="uid://brbls771fyx" path="res://characters/sheriff alerted.png" id="12_0te34"]
+[ext_resource type="Script" uid="uid://vtb63jm36mfu" path="res://Level3/sheriff.gd" id="12_6qd4v"]
+[ext_resource type="AudioStream" uid="uid://dox83qjayv26f" path="res://assets/german_cat.mp3" id="13_7y3ys"]
+[ext_resource type="Script" uid="uid://ddkvj3o1y1mw0" path="res://Level3/cup.gd" id="14_3vbfk"]
+[ext_resource type="Script" uid="uid://bisa1mpj8xwiu" path="res://Level3/safe.gd" id="16_nv00b"]
+[ext_resource type="Texture2D" uid="uid://bsrw64y1071om" path="res://characters/sheriff.png" id="19_3vbfk"]
+[ext_resource type="Texture2D" uid="uid://c5jtvx5g0oqou" path="res://assets/dizzy.png" id="20_nv00b"]
+[ext_resource type="Texture2D" uid="uid://br1ht7lkcbwjq" path="res://assets/x.png" id="21_f3pp8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0te34"]
+size = Vector2(1341.64, 1374.41)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0te34"]
+radius = 73.8686
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7y3ys"]
+size = Vector2(151.62, 153.718)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qeqoq"]
+size = Vector2(258.052, 310)
+
+[node name="Level3" type="Node2D"]
+script = ExtResource("1_3kk5m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_07wv6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Shelf1" type="Sprite2D" parent="."]
+position = Vector2(251, -79)
+scale = Vector2(1.22566, 1)
+texture = ExtResource("2_0sspt")
+
+[node name="Shelf2" type="Sprite2D" parent="."]
+position = Vector2(253, -195)
+scale = Vector2(1.23451, 1)
+texture = ExtResource("2_0sspt")
+
+[node name="Wanted1" type="Sprite2D" parent="."]
+position = Vector2(-350, -230)
+scale = Vector2(0.201667, 0.2)
+texture = ExtResource("4_7ewjb")
+
+[node name="Wanted2" type="Sprite2D" parent="."]
+position = Vector2(-270, -120)
+scale = Vector2(0.0908319, 0.10332)
+texture = ExtResource("5_1418g")
+
+[node name="Area2D" type="Area2D" parent="Wanted2"]
+script = ExtResource("6_elxjv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wanted2/Area2D"]
+position = Vector2(0.751221, -9.69873)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0te34")
+
+[node name="Label" type="Label" parent="Wanted2"]
+visible = false
+offset_left = -2146.82
+offset_top = -203.252
+offset_right = -946.823
+offset_bottom = -3.25201
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 210
+text = "Poster"
+
+[node name="BlackLeft" type="Sprite2D" parent="."]
+position = Vector2(451.5, 222.25)
+scale = Vector2(1.28659, 1.28231)
+texture = ExtResource("6_043q5")
+
+[node name="DarkBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(341.625, 332.75)
+scale = Vector2(1.37579, 1.36149)
+texture = ExtResource("7_2gsj4")
+
+[node name="LightBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(563, 339)
+scale = Vector2(1.36164, 1.38514)
+texture = ExtResource("8_ayjpk")
+
+[node name="SheriffSleepy" type="Sprite2D" parent="."]
+position = Vector2(71, 123)
+scale = Vector2(1.26258, 1.40203)
+texture = ExtResource("9_xoc77")
+
+[node name="Area2D" type="Area2D" parent="SheriffSleepy"]
+script = ExtResource("12_6qd4v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SheriffSleepy/Area2D"]
+shape = SubResource("CircleShape2D_0te34")
+
+[node name="Label" type="Label" parent="SheriffSleepy"]
+visible = false
+offset_left = 87.9152
+offset_top = -49.2144
+offset_right = 327.915
+offset_bottom = -14.2144
+theme_override_fonts/font = ExtResource("10_2gsj4")
+text = "The Sheriff is 
+tired too..."
+
+[node name="Cup1" type="Sprite2D" parent="."]
+position = Vector2(223, -259)
+scale = Vector2(0.830769, 0.810714)
+texture = ExtResource("9_043q5")
+
+[node name="Cup2" type="Sprite2D" parent="."]
+position = Vector2(308, -127)
+scale = Vector2(0.61432, 0.535772)
+texture = ExtResource("9_043q5")
+
+[node name="Area2D" type="Area2D" parent="Cup2"]
+script = ExtResource("14_3vbfk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cup2/Area2D"]
+position = Vector2(2.32507, -5.93324)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7y3ys")
+
+[node name="Label" type="Label" parent="Cup2"]
+visible = false
+offset_left = -489.973
+offset_top = 13.0653
+offset_right = -104.973
+offset_bottom = 48.0653
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 35
+text = "Duel Trophy"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 1295.0
+offset_top = 53.0
+offset_right = 1659.0
+offset_bottom = 414.0
+
+[node name="Level" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 48.0
+offset_right = 186.0
+offset_bottom = 73.0
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+
+[node name="Clicks" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 36.0
+offset_top = 133.0
+offset_right = 211.0
+offset_bottom = 158.0
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 25
+text = "Clicks:"
+
+[node name="Holdin" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 36.0
+offset_top = 213.0
+offset_right = 236.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 25
+text = "You're
+holdin':"
+
+[node name="item" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 70.0
+offset_top = 298.0
+offset_right = 280.0
+offset_bottom = 349.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 30
+text = "predmet"
+
+[node name="level_num" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 243.0
+offset_top = 48.0
+offset_right = 314.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 30
+text = "3"
+
+[node name="clicks_num" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 247.0
+offset_top = 133.0
+offset_right = 318.0
+offset_bottom = 163.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Safe" type="Sprite2D" parent="."]
+position = Vector2(-545, 299)
+scale = Vector2(0.757905, 0.77)
+texture = ExtResource("11_ayjpk")
+
+[node name="Area2D" type="Area2D" parent="Safe"]
+script = ExtResource("16_nv00b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Safe/Area2D"]
+position = Vector2(0.277649, -4.35065)
+shape = SubResource("RectangleShape2D_qeqoq")
+
+[node name="Label" type="Label" parent="Safe"]
+visible = false
+offset_left = -131.943
+offset_top = -229.87
+offset_right = 18.0574
+offset_bottom = -199.87
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 30
+text = "GOLD!"
+
+[node name="SheriffAlerted" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(76.125, 123)
+scale = Vector2(1.29403, 1.40541)
+texture = ExtResource("12_0te34")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="SheriffAlerted"]
+stream = ExtResource("13_7y3ys")
+
+[node name="Completed" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="Completed"]
+visible = false
+offset_left = 310.0
+offset_top = 470.0
+offset_right = 1572.0
+offset_bottom = 696.0
+
+[node name="Label" type="Label" parent="Completed/Panel"]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 82.0
+offset_right = 1138.0
+offset_bottom = 165.0
+theme_override_fonts/font = ExtResource("10_2gsj4")
+theme_override_font_sizes/font_size = 30
+text = "Job’s done, let’s loot and scoot!"
+
+[node name="Sheriff" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(68.9375, 122.375)
+scale = Vector2(1.35928, 1.38345)
+texture = ExtResource("19_3vbfk")
+
+[node name="Dizzy" type="Sprite2D" parent="Sheriff"]
+position = Vector2(8.01374, -50.864)
+scale = Vector2(0.429019, 0.372845)
+texture = ExtResource("20_nv00b")
+
+[node name="X1" type="Sprite2D" parent="Sheriff"]
+position = Vector2(-13.8419, 15.5418)
+scale = Vector2(0.0555183, 0.0554597)
+texture = ExtResource("21_f3pp8")
+
+[node name="X2" type="Sprite2D" parent="Sheriff"]
+position = Vector2(22.5843, 16.9547)
+scale = Vector2(0.0452969, 0.0478508)
+texture = ExtResource("21_f3pp8")
+
+[node name="CupFallen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(24, 368)
+rotation = 1.18508
+scale = Vector2(0.61432, 0.535772)
+texture = ExtResource("9_043q5")

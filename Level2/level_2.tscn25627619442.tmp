@@ -1,0 +1,233 @@
+[gd_scene load_steps=22 format=3 uid="uid://bsyp1y3p0yqxt"]
+
+[ext_resource type="Script" uid="uid://cr1h8o7mpq8oq" path="res://Level2/main.gd" id="1_k4rd8"]
+[ext_resource type="Texture2D" uid="uid://qotujgs0hhvd" path="res://assets/level 2 scene real.png" id="1_slqqy"]
+[ext_resource type="Texture2D" uid="uid://dcac8lcr4xnv7" path="res://characters/dark brown left.png" id="2_5ruie"]
+[ext_resource type="Texture2D" uid="uid://ck65n0yqc4dd6" path="res://characters/black left.png" id="3_slqqy"]
+[ext_resource type="Texture2D" uid="uid://xbbyn6lf3yqo" path="res://characters/light brown left.png" id="4_y0bex"]
+[ext_resource type="Script" uid="uid://bkl66amjul02l" path="res://Level2/key.gd" id="6_hppiw"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="6_slqqy"]
+[ext_resource type="Texture2D" uid="uid://c8qi723oxaubx" path="res://characters/guard left sleepy.png" id="7_cy2br"]
+[ext_resource type="Texture2D" uid="uid://br1iml6p1u71c" path="res://assets/key.png" id="7_y0bex"]
+[ext_resource type="Texture2D" uid="uid://bypojh2n34m3w" path="res://assets/ball.png" id="8_y0bex"]
+[ext_resource type="Script" uid="uid://bsangfryva7q4" path="res://Level2/guard.gd" id="9_wkw2r"]
+[ext_resource type="Texture2D" uid="uid://pdw1laonja5f" path="res://assets/whiskey.png" id="10_85xks"]
+[ext_resource type="Script" uid="uid://cfj37yngqwrmi" path="res://Level2/whiskey.gd" id="14_8noqt"]
+[ext_resource type="Script" uid="uid://bw6cpelv3wt72" path="res://Level2/rope.gd" id="16_msv6h"]
+[ext_resource type="Texture2D" uid="uid://dyq3wb8da1wlh" path="res://characters/guard alerted.png" id="18_kcywq"]
+[ext_resource type="Texture2D" uid="uid://ce3xxc0urr1kg" path="res://assets/rope_n_cloth.png" id="18_t41u2"]
+[ext_resource type="AudioStream" uid="uid://dox83qjayv26f" path="res://assets/german_cat.mp3" id="19_t41u2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85xks"]
+size = Vector2(273.118, 124.07)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_85xks"]
+radius = 80.7295
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n0odj"]
+radius = 214.556
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_85xks"]
+radius = 107.401
+height = 214.802
+
+[node name="Level2" type="Node2D"]
+script = ExtResource("1_k4rd8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_slqqy")
+
+[node name="DarkBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(510.047, 298.438)
+scale = Vector2(1.3579, 1.38429)
+texture = ExtResource("2_5ruie")
+
+[node name="BlackLeft" type="Sprite2D" parent="."]
+position = Vector2(325.781, 333.984)
+scale = Vector2(1.38072, 1.40115)
+texture = ExtResource("3_slqqy")
+
+[node name="LightBrownLeft" type="Sprite2D" parent="."]
+position = Vector2(620.484, 335.469)
+scale = Vector2(1.36498, 1.43877)
+texture = ExtResource("4_y0bex")
+
+[node name="Key" type="Sprite2D" parent="."]
+position = Vector2(-420, 110)
+scale = Vector2(0.330078, 0.37793)
+texture = ExtResource("7_y0bex")
+
+[node name="Area2D" type="Area2D" parent="Key"]
+position = Vector2(-33.3254, 47.6279)
+script = ExtResource("6_hppiw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Key/Area2D"]
+position = Vector2(-30.2958, -142.884)
+shape = SubResource("RectangleShape2D_85xks")
+
+[node name="Label" type="Label" parent="Key"]
+visible = false
+offset_left = -645.302
+offset_top = -367.793
+offset_right = 404.698
+offset_bottom = -224.793
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 60
+text = "Key to the 
+sheriff's office"
+
+[node name="Guard" type="Sprite2D" parent="."]
+position = Vector2(68.625, 121.75)
+scale = Vector2(1.25, 1.33446)
+texture = ExtResource("7_cy2br")
+
+[node name="Area2D" type="Area2D" parent="Guard"]
+script = ExtResource("9_wkw2r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Guard/Area2D"]
+position = Vector2(4.05516, -5.05824)
+shape = SubResource("CircleShape2D_85xks")
+
+[node name="Label" type="Label" parent="Guard"]
+visible = false
+offset_left = -129.482
+offset_top = -141.443
+offset_right = 130.518
+offset_bottom = -98.443
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 17
+text = "The guard is 
+sleeping..."
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 1326.0
+offset_top = 55.0
+offset_right = 1680.0
+offset_bottom = 409.0
+
+[node name="Level" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 30.0
+offset_top = 42.0
+offset_right = 180.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "Level:"
+
+[node name="Clicks" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 30.0
+offset_top = 125.0
+offset_right = 205.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "Clicks:"
+
+[node name="Holdin" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 30.0
+offset_top = 213.0
+offset_right = 205.0
+offset_bottom = 266.0
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "You're
+holdin:"
+
+[node name="lvl_num" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 242.0
+offset_top = 43.0
+offset_right = 282.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "2"
+
+[node name="clicks_num" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 242.0
+offset_top = 126.0
+offset_right = 311.0
+offset_bottom = 179.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "0
+"
+
+[node name="item" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 82.0
+offset_top = 301.0
+offset_right = 257.0
+offset_bottom = 354.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 25
+text = "predmet"
+
+[node name="Ball1" type="Sprite2D" parent="."]
+position = Vector2(328, -85)
+scale = Vector2(0.0975, 0.0951087)
+texture = ExtResource("8_y0bex")
+
+[node name="Ball2" type="Sprite2D" parent="."]
+position = Vector2(276, -85)
+scale = Vector2(0.100323, 0.0922307)
+texture = ExtResource("8_y0bex")
+
+[node name="Whiskey" type="Sprite2D" parent="."]
+position = Vector2(-129, 91)
+scale = Vector2(0.228421, 0.242015)
+texture = ExtResource("10_85xks")
+
+[node name="Area2D" type="Area2D" parent="Whiskey"]
+script = ExtResource("14_8noqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Whiskey/Area2D"]
+position = Vector2(-0.000267029, 57.8477)
+shape = SubResource("CircleShape2D_n0odj")
+
+[node name="Label" type="Label" parent="Whiskey"]
+visible = false
+offset_left = -752.996
+offset_top = 268.579
+offset_right = -192.996
+offset_bottom = 348.579
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 88
+text = "Whiskey"
+
+[node name="GuardAlerted" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(72.625, 127.25)
+scale = Vector2(1.37579, 1.4223)
+texture = ExtResource("18_kcywq")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="GuardAlerted"]
+stream = ExtResource("19_t41u2")
+
+[node name="RopeNCloth" type="Sprite2D" parent="."]
+position = Vector2(305, 6.99999)
+scale = Vector2(0.290663, 0.360923)
+texture = ExtResource("18_t41u2")
+
+[node name="Area2D" type="Area2D" parent="RopeNCloth"]
+script = ExtResource("16_msv6h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RopeNCloth/Area2D"]
+position = Vector2(0, -22.1654)
+scale = Vector2(1.922, 2.23785)
+shape = SubResource("CapsuleShape2D_85xks")
+
+[node name="Label" type="Label" parent="RopeNCloth"]
+visible = false
+offset_left = -1004.6
+offset_top = -241.049
+offset_right = -284.598
+offset_bottom = -181.049
+theme_override_fonts/font = ExtResource("6_slqqy")
+theme_override_font_sizes/font_size = 60
+text = "Rope N Cloth"

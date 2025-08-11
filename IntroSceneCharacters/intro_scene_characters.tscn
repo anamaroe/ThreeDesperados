@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://cm54o2px5cdwn"]
+
+[ext_resource type="Texture2D" uid="uid://5rnogb8gt5hu" path="res://assets/scene0.jpg" id="1_j0xuf"]
+[ext_resource type="Texture2D" uid="uid://tojac3riddxy" path="res://characters/black.png" id="2_maaqt"]
+[ext_resource type="Texture2D" uid="uid://xbbyn6lf3yqo" path="res://characters/light brown left.png" id="3_uoti5"]
+[ext_resource type="Texture2D" uid="uid://dcac8lcr4xnv7" path="res://characters/dark brown left.png" id="4_pe7do"]
+[ext_resource type="Script" uid="uid://gyhve7pqksyn" path="res://IntroSceneCharacters/plotting.gd" id="5_pe7do"]
+[ext_resource type="Texture2D" uid="uid://y4ft552jm3el" path="res://characters/dark brown.png" id="5_uoti5"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="6_pe7do"]
+[ext_resource type="Script" uid="uid://4agj0c70aoc7" path="res://IntroSceneCharacters/skip.gd" id="6_w1fo4"]
+
+[node name="IntroSceneCharacters" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j0xuf")
+
+[node name="Black" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(-484.063, 131.594)
+scale = Vector2(1.89101, 1.83121)
+texture = ExtResource("2_maaqt")
+
+[node name="LightBrownLeft" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(76.2813, 149.437)
+scale = Vector2(1.77005, 1.7897)
+texture = ExtResource("3_uoti5")
+
+[node name="DarkBrownLeft" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(406, 137)
+scale = Vector2(1.69064, 1.72973)
+texture = ExtResource("4_pe7do")
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = 529.0
+offset_top = -441.0
+offset_right = 717.0
+offset_bottom = -403.0
+theme_override_fonts/font = ExtResource("6_pe7do")
+theme_override_font_sizes/font_size = 30
+text = "Skip >"
+script = ExtResource("6_w1fo4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -587.0
+offset_top = -205.0
+offset_right = 585.0
+offset_bottom = -41.0
+script = ExtResource("5_pe7do")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 8.0
+offset_right = 182.0
+offset_bottom = 156.0
+texture = ExtResource("5_uoti5")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 25.0
+offset_right = 533.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(1, 0.839216, 0.466667, 0.541176)
+theme_override_fonts/font = ExtResource("6_pe7do")
+theme_override_font_sizes/font_size = 25
+text = "Angel Eyes"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 76.0
+offset_right = 777.0
+offset_bottom = 104.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.788235)
+theme_override_fonts/font = ExtResource("6_pe7do")
+theme_override_font_sizes/font_size = 28
+text = "komentar"
+
+[node name="Button" type="Button" parent="CanvasLayer/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 857.0
+offset_top = 61.0
+offset_right = 1145.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("6_pe7do")
+theme_override_font_sizes/font_size = 28
+text = "Continue >"

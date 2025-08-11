@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwg43da7gpl0b"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3oslpfs7xe" path="res://assets/black.jpg" id="1_lcibk"]
+[ext_resource type="Script" uid="uid://c0ai7asjarxs8" path="res://IntroScene/intro_text.gd" id="2_llxxx"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="2_o6sod"]
+
+[node name="IntroScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lcibk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+script = ExtResource("2_llxxx")
+
+[node name="Label1" type="Label" parent="CanvasLayer"]
+offset_left = -600.0
+offset_top = -264.0
+offset_right = -30.0
+offset_bottom = -222.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_o6sod")
+theme_override_font_sizes/font_size = 30
+text = "In the wild west..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = -600.0
+offset_top = -101.0
+offset_right = 480.0
+offset_bottom = -71.0
+theme_override_fonts/font = ExtResource("2_o6sod")
+theme_override_font_sizes/font_size = 30
+text = "Three outlaws chased the same prize."
+metadata/_edit_use_anchors_ = true
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+offset_left = -600.0
+offset_top = 39.0
+offset_right = 540.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("2_o6sod")
+theme_override_font_sizes/font_size = 30
+text = "But sometimes, to get what you want..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+offset_left = -600.0
+offset_top = 263.0
+offset_right = 180.0
+offset_bottom = 293.0
+theme_override_fonts/font = ExtResource("2_o6sod")
+theme_override_font_sizes/font_size = 30
+text = "You need to ride together."
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+one_shot = true
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="CanvasLayer" method="_on_Timer_timeout"]

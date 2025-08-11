@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc1e0by4a1pwc"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3oslpfs7xe" path="res://assets/black.jpg" id="1_mpypm"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="2_756py"]
+[ext_resource type="Script" uid="uid://cdyfdylq56iss" path="res://GameOver/blinker.gd" id="3_ou0ni"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mpypm")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -480.0
+offset_top = -67.0
+offset_right = 480.0
+offset_bottom = -27.0
+theme_override_fonts/font = ExtResource("2_756py")
+theme_override_font_sizes/font_size = 40
+text = "You woke up the sheriff!"
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -88.0
+offset_top = 121.0
+offset_right = 85.0
+offset_bottom = 162.0
+theme_override_fonts/font = ExtResource("2_756py")
+theme_override_font_sizes/font_size = 33
+text = "Retry"
+script = ExtResource("3_ou0ni")
+
+[node name="Camera2D" type="Camera2D" parent="."]

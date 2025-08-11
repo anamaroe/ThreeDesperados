@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu5asnkdn38r2"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3oslpfs7xe" path="res://assets/black.jpg" id="1_is6cv"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="2_1g6je"]
+[ext_resource type="Script" uid="uid://dy4rjn10uyo1o" path="res://GameOver2/blinker.gd" id="3_0vfhy"]
+
+[node name="GameOver" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_is6cv")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -755.0
+offset_top = -111.0
+offset_right = 765.0
+offset_bottom = -28.0
+theme_override_fonts/font = ExtResource("2_1g6je")
+theme_override_font_sizes/font_size = 40
+text = "The Sheriff woke up 
+and you got caught!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = -101.0
+offset_top = 64.0
+offset_right = 105.0
+offset_bottom = 105.0
+theme_override_fonts/font = ExtResource("2_1g6je")
+theme_override_font_sizes/font_size = 33
+text = "Replay"
+script = ExtResource("3_0vfhy")
+
+[node name="Camera2D" type="Camera2D" parent="."]

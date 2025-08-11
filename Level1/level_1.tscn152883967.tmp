@@ -1,0 +1,263 @@
+[gd_scene load_steps=24 format=3 uid="uid://b2iigye40ipex"]
+
+[ext_resource type="Script" uid="uid://br3i12gu7bof2" path="res://Level1/main.gd" id="1_7uxsm"]
+[ext_resource type="Texture2D" uid="uid://cny3u80y317ui" path="res://assets/level 1 scene.png" id="1_dgsmt"]
+[ext_resource type="Texture2D" uid="uid://bednystgl1pe6" path="res://assets/corn.png" id="2_i80g2"]
+[ext_resource type="Texture2D" uid="uid://brgc80wq2uh6v" path="res://assets/rooster idle.png" id="3_jvwuh"]
+[ext_resource type="Script" uid="uid://0qw4t0mata77" path="res://Level1/door.gd" id="3_wftmm"]
+[ext_resource type="Texture2D" uid="uid://y4ft552jm3el" path="res://characters/dark brown.png" id="4_2okni"]
+[ext_resource type="Script" uid="uid://2qxyc5vjdqc0" path="res://Level1/corn.gd" id="5_a5xyl"]
+[ext_resource type="Texture2D" uid="uid://crd77u66c5r8q" path="res://characters/light brown.png" id="5_fqvtk"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="5_kvwx4"]
+[ext_resource type="Texture2D" uid="uid://tojac3riddxy" path="res://characters/black.png" id="6_kvwx4"]
+[ext_resource type="Texture2D" uid="uid://cebvvuxh5138h" path="res://assets/chilli.png" id="7_u0gep"]
+[ext_resource type="Texture2D" uid="uid://hgoflvt2e5h1" path="res://assets/pile.png" id="8_a5xyl"]
+[ext_resource type="Script" uid="uid://c3uwx28v84gss" path="res://Level1/rooster.gd" id="8_wftmm"]
+[ext_resource type="Texture2D" uid="uid://bhetslwtej0cl" path="res://assets/screamo.png" id="11_kvwx4"]
+[ext_resource type="Script" uid="uid://yhx2l1cdk5q7" path="res://Level1/pile_animation.gd" id="11_u0gep"]
+[ext_resource type="Script" uid="uid://bv7aaabs0qbgj" path="res://Level1/chilli.gd" id="12_b6c0x"]
+[ext_resource type="Texture2D" uid="uid://cftrndkxceyil" path="res://assets/rooster eating.png" id="12_u0gep"]
+[ext_resource type="Texture2D" uid="uid://bu4dxcw6uluw3" path="res://characters/sheriff alerted left.png" id="17_08rov"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2okni"]
+size = Vector2(237, 263)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u0gep"]
+radius = 250.7
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u0gep"]
+radius = 253.457
+height = 589.089
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqvtk"]
+radius = 52.7371
+height = 270.798
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kvwx4"]
+radius = 122.686
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_7uxsm")
+
+[node name="Door" type="Sprite2D" parent="."]
+texture = ExtResource("1_dgsmt")
+
+[node name="Area2D" type="Area2D" parent="Door"]
+script = ExtResource("3_wftmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/Area2D"]
+position = Vector2(161.5, 57.5)
+shape = SubResource("RectangleShape2D_2okni")
+
+[node name="Label" type="Label" parent="Door"]
+visible = false
+offset_left = -82.0
+offset_top = 40.0
+offset_right = 98.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 22
+text = "Enter?"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Corn" type="Sprite2D" parent="."]
+position = Vector2(609, 419)
+scale = Vector2(0.177529, 0.170139)
+texture = ExtResource("2_i80g2")
+
+[node name="Area2D" type="Area2D" parent="Corn"]
+script = ExtResource("5_a5xyl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Corn/Area2D"]
+shape = SubResource("CircleShape2D_u0gep")
+
+[node name="Label" type="Label" parent="Corn/Area2D"]
+visible = false
+offset_left = 107.025
+offset_top = -417.306
+offset_right = 627.025
+offset_bottom = -282.306
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 122
+text = "Corn"
+
+[node name="RoosterIdle" type="Sprite2D" parent="."]
+position = Vector2(-5.875, 269)
+scale = Vector2(0.244617, 0.230865)
+texture = ExtResource("3_jvwuh")
+
+[node name="Area2D" type="Area2D" parent="RoosterIdle"]
+script = ExtResource("8_wftmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoosterIdle/Area2D"]
+position = Vector2(-29.1272, 8.66307)
+shape = SubResource("CapsuleShape2D_u0gep")
+
+[node name="Label" type="Label" parent="RoosterIdle"]
+visible = false
+offset_left = -707.739
+offset_top = -333.528
+offset_right = 12.2609
+offset_bottom = -170.528
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 80
+text = "Feed me. 
+Or else."
+
+[node name="DarkBrown" type="Sprite2D" parent="."]
+position = Vector2(-286, 255)
+scale = Vector2(1.29874, 1.36486)
+texture = ExtResource("4_2okni")
+
+[node name="LightBrown" type="Sprite2D" parent="."]
+position = Vector2(-390, 384)
+scale = Vector2(1.27358, 1.31757)
+texture = ExtResource("5_fqvtk")
+
+[node name="Black" type="Sprite2D" parent="."]
+position = Vector2(-606, 355)
+scale = Vector2(1.29268, 1.35034)
+texture = ExtResource("6_kvwx4")
+
+[node name="Chilli" type="Sprite2D" parent="."]
+position = Vector2(193, 315)
+scale = Vector2(0.226389, 0.236339)
+texture = ExtResource("7_u0gep")
+
+[node name="Area2D" type="Area2D" parent="Chilli"]
+script = ExtResource("12_b6c0x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chilli/Area2D"]
+rotation = -1.91288
+shape = SubResource("CapsuleShape2D_fqvtk")
+
+[node name="Label" type="Label" parent="Chilli"]
+visible = false
+offset_left = 114.847
+offset_top = 76.1618
+offset_right = 606.847
+offset_bottom = 158.162
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 82
+text = "Chilli"
+
+[node name="Pile" type="Sprite2D" parent="."]
+position = Vector2(613, 409)
+scale = Vector2(0.458333, 0.45)
+texture = ExtResource("8_a5xyl")
+
+[node name="Area2D" type="Area2D" parent="Pile"]
+script = ExtResource("11_u0gep")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pile/Area2D"]
+position = Vector2(-2.18182, 15.5556)
+shape = SubResource("CircleShape2D_kvwx4")
+
+[node name="Label" type="Label" parent="Pile"]
+visible = false
+offset_left = -80.7274
+offset_top = -191.111
+offset_right = 239.273
+offset_bottom = -111.111
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 40
+text = "Old rags"
+
+[node name="Screamo" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1.25001, 270)
+scale = Vector2(0.240698, 0.204748)
+texture = ExtResource("11_kvwx4")
+
+[node name="RoosterEating" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(10, 302)
+scale = Vector2(0.205963, 0.205679)
+texture = ExtResource("12_u0gep")
+
+[node name="Corn" type="Sprite2D" parent="RoosterEating"]
+position = Vector2(155.368, 213.926)
+scale = Vector2(0.545506, 0.398409)
+texture = ExtResource("2_i80g2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_left = 1319.0
+offset_top = 73.0
+offset_right = 1684.0
+offset_bottom = 398.0
+
+[node name="Youre_holdin" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 187.0
+offset_right = 354.0
+offset_bottom = 268.0
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 25
+text = "You're 
+holdin':
+"
+
+[node name="Level" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 39.0
+offset_right = 228.0
+offset_bottom = 64.0
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 25
+text = "Level: "
+
+[node name="Clicks" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 118.0
+offset_right = 253.0
+offset_bottom = 171.0
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 25
+text = "Clicks: "
+
+[node name="predmet" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 255.0
+offset_right = 300.0
+offset_bottom = 311.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.827451)
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 30
+text = "predmet"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="level_num" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 38.0
+offset_right = 295.0
+offset_bottom = 68.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.827451)
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 30
+text = "1"
+
+[node name="clicks_num" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 118.0
+offset_right = 295.0
+offset_bottom = 148.0
+theme_override_colors/font_color = Color(1, 0.992157, 0.552941, 0.827451)
+theme_override_fonts/font = ExtResource("5_kvwx4")
+theme_override_font_sizes/font_size = 30
+text = "0"
+
+[node name="Sheriff" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(173, 271)
+scale = Vector2(1.31761, 1.34459)
+texture = ExtResource("17_08rov")
