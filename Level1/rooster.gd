@@ -68,5 +68,6 @@ func _on_timeout():
 	timer.timeout.connect(_on_timeout_continue) 
 
 func _on_timeout_continue():
-	get_tree().change_scene_to_file("res://Level2Intro/level_2_intro.tscn")
+	# changed
+	get_tree().change_scene_to_file("res://LevelIntro/level_intro.tscn")
 	return

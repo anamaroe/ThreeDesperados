@@ -15,6 +15,9 @@ var safe_opened = false
 var sheriff_beaten = false
 var currently_held_item_name_3: String = ""
 
+# new
+var current_lvl: int = 1
+
 # both
 func _ready():
 	num_of_clicks = 0

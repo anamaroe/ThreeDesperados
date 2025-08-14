@@ -20,8 +20,7 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 			$"../../CupFallen".visible = true 
 			
 			GameState.sheriff_beaten = true 
-			GameState.currently_held_item_name_3 = ""
-			#name_label.text = "nothin'"
+			GameState.currently_held_item_name_3 = "" 
 			$"../../CanvasLayer/Panel/item".text = "nothin'"
 		else:
 			print("tu sam")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7jkb8ufeai13"]
+
+[ext_resource type="Texture2D" uid="uid://bvr3oslpfs7xe" path="res://assets/black.jpg" id="1_qucw3"]
+[ext_resource type="Script" uid="uid://bqe2ceaxplwej" path="res://LevelIntro/timer.gd" id="2_vejjc"]
+[ext_resource type="FontFile" uid="uid://dvwrtjoaj82rh" path="res://assets/PressStart2P-Regular.ttf" id="3_8htaj"]
+
+[node name="Level1Intro" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qucw3")
+script = ExtResource("2_vejjc")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -139.0
+offset_top = -21.0
+offset_right = 141.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("3_8htaj")
+theme_override_font_sizes/font_size = 40
+text = "Level 1"
+
+[node name="Camera2D" type="Camera2D" parent="."]
