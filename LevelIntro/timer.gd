@@ -4,6 +4,8 @@ extends Sprite2D
 
 func _ready():
 	level_num_label.text = "Level " + str(GameState.current_lvl)
+	GameState.reset_clicks()
+	GameState.currently_held_item_name = ""
 	var timer = get_tree().create_timer(1.4)
 	timer.timeout.connect(_on_timeout)
 

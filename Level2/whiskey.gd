@@ -18,7 +18,7 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 		# clicking the object after defeating the guard has no effect
 		if GameState.guard_beaten:
 			return
-		GameState.increment_clicks2()
+		GameState.increment_clicks()
 		$"../../Guard".visible = false
 		$"../../GuardAlerted".visible = true
 		$"../../GuardAlerted/Audio".play()

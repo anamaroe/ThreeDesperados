@@ -9,10 +9,10 @@ func _ready():
 
 func on_area_2d_input_event(viewport, event, shape_idx): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GameState.increment_clicks3() 
+		GameState.increment_clicks() 
 		# on se uvek pomami, osim ako imam rope n cloth
-		print(GameState.currently_held_item_name_3)
-		if GameState.currently_held_item_name_3 == "cup":
+		print(GameState.currently_held_item_name)
+		if GameState.currently_held_item_name == "cup":
 			# success 
 			$"../../SheriffSleepy".visible = false
 			$"../../Sheriff".visible = true 
@@ -20,14 +20,14 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 			$"../../CupFallen".visible = true 
 			
 			GameState.sheriff_beaten = true 
-			GameState.currently_held_item_name_3 = "" 
+			GameState.currently_held_item_name = "" 
 			$"../../CanvasLayer/Panel/item".text = "nothin'"
 		else:
 			print("tu sam")
 			$"../../SheriffSleepy".visible = false
 			$"../../SheriffAlerted".visible = true
 			$"../../SheriffAlerted/Audio".play() 
-			GameState.currently_held_item_name_3 = ""
+			GameState.currently_held_item_name = ""
 			await get_tree().create_timer(2).timeout
 			_on_sheriff_timeout()
 			print("serif tajmoutovao")

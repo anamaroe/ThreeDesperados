@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Three Desperados"
-run/main_scene="uid://baoyqc3mkgu05"
+run/main_scene="uid://wa84l7biyjpm"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 

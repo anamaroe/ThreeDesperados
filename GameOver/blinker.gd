@@ -7,17 +7,10 @@ var blink_interval := 0.5
 
 func _ready():
 	match GameState.current_lvl:
-		1:
-			GameState.num_of_clicks = 0 
-			label_txt.text = "You woke up the sheriff!" 
-		2:
-			GameState.num_of_clicks_2 = 0 
-			label_txt.text = "The Guard woke up\nand you got caught!" 
-		3:
-			GameState.num_of_clicks_3 = 0 
-			label_txt.text = "The Sheriff woke up\nand you got caught!" 
-		_:
-			print("Game over scene called in wrong timeee") 
+		1: label_txt.text = "You woke up the sheriff!" 
+		2: label_txt.text = "The Guard woke up\nand you got caught!" 
+		3: label_txt.text = "The Sheriff woke up\nand you got caught!" 
+		_: print("Game over scene called in wrong time") 
 
 func _pressed():   
 	get_tree().change_scene_to_file("res://LevelIntro/level_intro.tscn")

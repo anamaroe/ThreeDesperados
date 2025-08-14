@@ -9,22 +9,22 @@ func _ready():
 
 func on_area_2d_input_event(viewport, event, shape_idx): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		GameState.increment_clicks2() 
+		GameState.increment_clicks() 
 		# on se uvek pomami, osim ako imam rope n cloth
-		print(GameState.currently_held_item_name_2)
-		if GameState.currently_held_item_name_2 == "rope n' cloth":
+		print(GameState.currently_held_item_name)
+		if GameState.currently_held_item_name == "rope n' cloth":
 			# success
 			# zavezi ga 
 			$"../../Guard".visible = false
 			$"../../GuardLeft".visible = true
 			$"../../RopeNCloth".visible = false  
 			GameState.guard_beaten = true 
-			GameState.currently_held_item_name_2 = ""
+			GameState.currently_held_item_name = ""
 		else:
 			$"../../GuardAlerted".visible = true
 			$"../../Guard".visible = false
 			$"../../GuardAlerted/Audio".play() 
-			GameState.currently_held_item_name_2 = ""
+			GameState.currently_held_item_name = ""
 			await get_tree().create_timer(2.1).timeout
 			_on_guard_timeout()
 
