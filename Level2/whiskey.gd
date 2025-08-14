@@ -16,6 +16,8 @@ func _on_mouse_exited():
 func on_area_2d_input_event(viewport, event, shape_idx): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 		GameState.increment_clicks2()
+		# ako je vec zavezan onda necemo da reagujemmo...
+		# to do
 		$"../../Guard".visible = false
 		$"../../GuardAlerted".visible = true
 		$"../../GuardAlerted/Audio".play()
