@@ -5,8 +5,7 @@ var current_index = 0
 var all_labels_shown = false
 
 func _ready():
-	labels = [$Label1, $Label2, $Label3, $Label4]
-	#$"root/Level1/CanvasLayer/Panel/clicks_num"
+	labels = [$Label1, $Label2, $Label3, $Label4] 
  
 	for i in range(1, labels.size()):
 		labels[i].visible = false
@@ -22,7 +21,7 @@ func _on_Timer_timeout():
 	else:
 		if not all_labels_shown:   
 			all_labels_shown = true
-			$Timer.wait_time = 1.9
+			$Timer.wait_time = 1.8
 			$Timer.start()
 		else: 
 			get_tree().change_scene_to_file("res://IntroSceneCharacters/intro_scene_characters.tscn")
