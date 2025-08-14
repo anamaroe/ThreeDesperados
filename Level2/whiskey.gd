@@ -15,7 +15,7 @@ func _on_mouse_exited():
 
 func on_area_2d_input_event(viewport, event, shape_idx): 
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		# ako je vec zavezan onda necemo da reagujemo...
+		# clicking the object after defeating the guard has no effect
 		if GameState.guard_beaten:
 			return
 		GameState.increment_clicks2()
