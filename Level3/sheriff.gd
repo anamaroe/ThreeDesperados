@@ -35,7 +35,9 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 func _on_sheriff_timeout():
 	# game over
 	print("menjam scenu")
-	get_tree().change_scene_to_file("res://GameOver3/game_over.tscn")
+	GameState.restarting_level = true
+	GameState.current_lvl = 3
+	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	print("posle menjanja scene")
 	return
 			

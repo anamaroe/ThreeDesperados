@@ -8,15 +8,18 @@ func _ready():
 	timer.timeout.connect(_on_timeout)
 
 func _on_timeout():
-	match GameState.current_lvl:
-		1:
-			GameState.current_lvl += 1
-			get_tree().change_scene_to_file("res://Level1/level_1.tscn")
-		2:
-			GameState.current_lvl += 1
-			get_tree().change_scene_to_file("res://Level2/level_2.tscn")
-		3:
-			GameState.current_lvl += 1
-			get_tree().change_scene_to_file("res://Level3/level_3.tscn")
-		_:
-			print("Intro scene called in wrong timeee")
+	if GameState.restarting_level == true: 
+		GameState.restarting_level = false
+		print("restartujem lvl")
+		match GameState.current_lvl:
+			1: get_tree().change_scene_to_file("res://Level1/level_1.tscn")
+			2: get_tree().change_scene_to_file("res://Level2/level_2.tscn")
+			3: get_tree().change_scene_to_file("res://Level3/level_3.tscn")
+			_: print("Intro scene after game over called in wrong timeee")
+	else:
+		print("next levl: ", GameState.current_lvl)
+		match GameState.current_lvl: 
+			1: get_tree().change_scene_to_file("res://Level1/level_1.tscn")
+			2: get_tree().change_scene_to_file("res://Level2/level_2.tscn")
+			3: get_tree().change_scene_to_file("res://Level3/level_3.tscn")
+			_: print("Intro scene called in wrong timeee")

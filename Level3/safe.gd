@@ -50,7 +50,9 @@ func pick_up():
 			timer.timeout.connect(_on_sheriff_timeout)
 
 func _on_sheriff_timeout():
-	get_tree().change_scene_to_file("res://GameOver3/game_over.tscn")
+	GameState.restarting_level = true
+	GameState.current_lvl = 3
+	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return
 	
 func _on_timeout():

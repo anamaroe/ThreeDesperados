@@ -23,5 +23,7 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 		timer.timeout.connect(_on_guard_timeout)
 
 func _on_guard_timeout():
-	get_tree().change_scene_to_file("res://GameOver2/game_over.tscn")
+	GameState.restarting_level = true
+	GameState.current_lvl = 2
+	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return

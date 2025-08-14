@@ -15,8 +15,11 @@ var safe_opened = false
 var sheriff_beaten = false
 var currently_held_item_name_3: String = ""
 
-# new
+
 var current_lvl: int = 1
+
+# new
+var restarting_level: bool = false
 
 # both
 func _ready():
@@ -61,6 +64,8 @@ func _on_clicked_timeout():
 
 func _on_sheriff_timeout():
 	# game over
+	GameState.restarting_level = true
+	GameState.current_lvl = 1
 	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return
 
@@ -101,7 +106,9 @@ func _on_clicked_timeout2():
 
 func _on_guard_timeout():
 	# game over
-	get_tree().change_scene_to_file("res://GameOver2/game_over.tscn")
+	GameState.restarting_level = true
+	GameState.current_lvl = 2
+	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return
 	
 func reset_clicks2():
@@ -144,7 +151,9 @@ func _on_clicked_timeout3():
 
 func _on_sheriff_timeout3():
 	# game over
-	get_tree().change_scene_to_file("res://GameOver3/game_over.tscn")
+	GameState.restarting_level = true
+	GameState.current_lvl = 3
+	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return
 	
 func reset_clicks3():

@@ -30,5 +30,8 @@ func _on_rooster_timeout():
 	timer.timeout.connect(_on_sheriff_timeout)
 
 func _on_sheriff_timeout():
+	print("pipnula vrata, restarting_level = true")
+	GameState.restarting_level = true
+	GameState.current_lvl = 1  
 	get_tree().change_scene_to_file("res://GameOver/game_over.tscn")
 	return 
