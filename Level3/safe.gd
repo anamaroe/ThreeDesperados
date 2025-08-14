@@ -37,6 +37,8 @@ func pick_up():
 		name_label.visible = false  
 		emit_signal("item_picked_up", item_name)
 		if GameState.sheriff_beaten:
+			GameState.currently_held_item_name = "gold"
+			$"../../CanvasLayer/Panel/item".text = "gold"
 			var timer = get_tree().create_timer(0.7) 
 			timer.timeout.connect(_on_timeout)
 		else:

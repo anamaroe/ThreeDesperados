@@ -67,7 +67,6 @@ script = ExtResource("6_elxjv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wanted2/Area2D"]
 position = Vector2(0.751221, -9.69873)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0te34")
 
 [node name="Label" type="Label" parent="Wanted2"]
@@ -131,7 +130,6 @@ script = ExtResource("14_3vbfk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Cup2/Area2D"]
 position = Vector2(2.32507, -5.93324)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7y3ys")
 
 [node name="Label" type="Label" parent="Cup2"]
@@ -163,6 +161,7 @@ theme_override_font_sizes/font_size = 25
 text = "Level:"
 
 [node name="Clicks" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 36.0
 offset_top = 133.0
 offset_right = 211.0
@@ -172,6 +171,7 @@ theme_override_font_sizes/font_size = 25
 text = "Clicks:"
 
 [node name="Holdin" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 36.0
 offset_top = 213.0
 offset_right = 236.0
@@ -182,6 +182,7 @@ text = "You're
 holdin':"
 
 [node name="item" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 70.0
 offset_top = 298.0
 offset_right = 280.0
@@ -192,6 +193,7 @@ theme_override_font_sizes/font_size = 30
 text = "predmet"
 
 [node name="level_num" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 243.0
 offset_top = 48.0
 offset_right = 314.0
@@ -202,6 +204,7 @@ theme_override_font_sizes/font_size = 30
 text = "3"
 
 [node name="clicks_num" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
 offset_left = 247.0
 offset_top = 133.0
 offset_right = 318.0

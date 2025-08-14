@@ -43,6 +43,7 @@ func on_area_2d_input_event(viewport, event, shape_idx):
 			# too many clicks
 			if GameState.chick_fed == true:
 				return
+			print("kliknut rooster")
 			$"../../RoosterIdle".visible = false
 			$"../../Screamo".visible = true 
 			$"../../Screamo/Fire".visible = false 
